@@ -23,4 +23,5 @@ Here all the lis that the script will install
 
 # How to use
 To Install this script, all you need to do is to run a single command line and it will install everything.
+
 `apt update; apt-get install dos2unix; wget https://pastebin.com/raw/d1J19T2i -O ~/lemp.sh && dos2unix ~/lemp.sh && bash ~/lemp.sh`
