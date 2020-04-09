@@ -1,7 +1,6 @@
 #!/bin/bash
 # Script author: Miguel
-# Add Subdomain Only
-# Script ver: 3.0
+# Add Subdomain + Create Database
 
 set -e
 
