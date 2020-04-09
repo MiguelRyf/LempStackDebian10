@@ -1,7 +1,6 @@
 #!/bin/bash
 # Script author: Miguel Emmara
 # Add Domian Only
-# Script ver: 1.0
 
 set -e
 
