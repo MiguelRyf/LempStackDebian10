@@ -39,7 +39,7 @@ apt update; apt-get install dos2unix; wget https://pastebin.com/raw/d1J19T2i -O 
 ## Getting Started
 Congratulations, you now have installed LEMP!
 
-Once everything is set up, run this command below to open the Menu Options
+Once everything is set up, run this command below in /root directory to open the Menu Options
 ```
 ./menu.sh
 ```
