@@ -1,7 +1,6 @@
 #!/bin/bash
 # Script author: Miguel
 # Add domain + Install Wordpress + Create Database
-# Script ver: 3.0
 
 set -e
  
