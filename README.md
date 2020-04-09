@@ -1,14 +1,15 @@
 # Lemp Stack
 LEMP (Linux eNginx Mysql PHP)
+
 We will use mariadb as our database
 
 Simple script developed during the coronavirus lockdown, this script will help to install LEMP (Linux eNginx Mysql PHP) with just a single command line.
 
-## Fully Optimize 
+## Fully Optimize
 The installation will also optimize the configuration within LEMP.
 
 ## Installation List
-Here all the lis that the script will install
+Here all the list that the script will install
 - Nginx: 1.14.2
 - MariaDB: 10.3.22-MariaDB-0+deb10u1
 - PHP 7: 7.3.14-1~deb10u1
@@ -37,7 +38,7 @@ apt update; apt-get install dos2unix; wget https://pastebin.com/raw/d1J19T2i -O 
 
 ## Getting Started
 Congratulations, you now have installed LEMP!
-Once everything set up, run this command below to open the Menu Options
+Once everything is set up, run this command below to open the Menu Options
 ```
 ./menu.sh
 ```
