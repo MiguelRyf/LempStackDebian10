@@ -19,7 +19,7 @@ Here all the list that the script will install
 - IONCUBE
 - HTOP
 - NETSTAT
-- OPEN SL
+- OPEN SSL
 - AB BENCHMARKING TOOL
 - ZIP AND UNZIP
 - FFMPEG AND IMAGEMAGICK
@@ -38,16 +38,17 @@ apt update; apt-get install dos2unix; wget https://pastebin.com/raw/d1J19T2i -O 
 
 ## Getting Started
 Congratulations, you now have installed LEMP!
+
 Once everything is set up, run this command below to open the Menu Options
 ```
 ./menu.sh
 ```
 IF YOU ARE NOT IN /root DIRECTORY
+
 JUST RUN THE COMMAND BELOW
 ```
 cd
 ```
 
 ## Authors
-
 * **Miguel Emmara** - *LempStackDebian10* - [MiguelRyf](https://github.com/MiguelRyf)
