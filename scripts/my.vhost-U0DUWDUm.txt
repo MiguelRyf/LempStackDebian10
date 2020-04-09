@@ -1,0 +1,103 @@
+fastcgi_cache_path /etc/nginx/mycache/domain.com levels=1:2 keys_zone=domain.com-mycache:100m inactive=60m;
+add_header X-Cache $upstream_cache_status;
+
+server {
+  listen 80;
+  listen 443 ssl http2;
+  ssl_certificate /etc/ssl/domain.com/domain.com.crt;
+  ssl_certificate_key /etc/ssl/domain.com/domain.com.key;
+  root /var/www/domain.com;
+  index index.php index.html index.htm;
+  error_log /var/log/nginx/domain.com.error.log;
+  server_name domain.com www.domain.com;
+
+   location / {
+       try_files $uri $uri/ /index.php?$args;
+   }
+
+  if ($http_user_agent ~* (MJ12bot|SemrushBot|AhrefsBot|DotBot) ) { return 301 http://127.0.0.1/; }
+  location ~*
+  /(?:uploads|files)/.*\.(asp|bat|cgi|htm|html|ico|js|jsp|md|php|pl|py|sh|shtml|swf|twig|txt|yaml|yml|zip|gz|tar|bzip2|7z)$ { deny all; }
+
+   location ~ \.php$ {
+       fastcgi_split_path_info ^(.+\.php)(/.+)$;
+       fastcgi_pass unix:/var/run/php/php7.3-domain.com-fpm.sock;
+       fastcgi_index index.php;
+       fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+       include fastcgi_params;
+       fastcgi_cache domain.com-mycache;
+       fastcgi_cache_key $scheme$request_method$host$request_uri;
+       fastcgi_cache_valid 200 301 302 1m;
+       fastcgi_cache_use_stale updating error timeout invalid_header http_500;
+       fastcgi_pass_header Set-Cookie;
+       fastcgi_pass_header Cookie;
+       fastcgi_ignore_headers Cache-Control Expires Set-Cookie;
+       fastcgi_cache_bypass $mycache_NO_cache;
+       fastcgi_no_cache $mycache_NO_cache;
+   }
+
+#Cache everything by default
+  set $mycache_NO_cache 0;
+
+  #Don't cache POST requests
+  if ($request_method = POST)
+  {
+      set $mycache_NO_cache 1;
+  }
+
+  if ($request_method != GET){
+      set $mycache_NO_cache 1;
+  }
+
+  #Don't cache if the URL contains a query string
+  if ($query_string != ""){
+      set $mycache_NO_cache 1;
+  }
+
+  #Don't cache the following URLs
+  ## (wp-login.php|wp-admin|login.php|backend|admin) = jika url halaman login di CUSTOM = tambahkan disini juga URL nya ##
+  if ($request_uri ~* "/(wp-login.php|wp-admin|login.php|backend|admin)"){
+      set $mycache_NO_cache 1;
+  }
+  
+  #Don't cache if there is a cookie called PHPSESSID
+  if ($http_cookie ~* "PHPSESSID"){
+      set $mycache_NO_cache 1;
+  }
+  
+  if ($http_cookie ~* "wordpress_logged_in_"){
+      set $mycache_NO_cache 1;
+  }
+ 
+   location = /favicon.ico {
+       log_not_found off;
+       access_log off;
+   }
+ 
+   location = /robots.txt {
+           try_files $uri $uri/ /index.php?$args;
+       allow all;
+       log_not_found off;
+       access_log off;
+   }
+ 
+   location ~* \.(jpg|jpeg|png|gif|ico|css|js|eot|ttf|otf|woff|svg)$ {
+       expires 365d;
+   }
+ 
+   location ~ /\.ht {
+       deny all;
+   }
+
+   location ~ /\.us {
+      deny all;
+   }
+
+  location = /xmlrpc.php {
+    return 403;
+   }
+ 
+   rewrite ^/sitemap_index\.xml$ /index.php?sitemap=1 last;
+   rewrite ^/([^/]+?)-sitemap([0-9]+)?\.xml$ /index.php?sitemap=$1&sitemap_n=$2 last;
+
+}
