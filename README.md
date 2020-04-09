@@ -1,2 +1,23 @@
-# Lemp
-LEMP (Linux eNginx Mariadb PHP)
+# Lemp Stack
+LEMP (Linux eNginx Mysql PHP)
+
+Simple script developed while coronavirus lockdown, this script will help to install LEMP (Linux eNginx Mysql PHP) with just a single command line.
+
+# Fully Optimize 
+The installation will also optimize the configuration within LEMP.
+
+# Installation List
+Here all the lis that the script will install
+- Nginx: 1.14.2
+- MariaDB: 10.3.22-MariaDB-0+deb10u1
+- PHP 7: 7.3.14-1~deb10u1
+- UFW Firewall
+- Memcached
+- IONCUBE
+- HTOP
+- NETSTAT
+- OPEN SL
+- AB BENCHMARKING TOOL
+- ZIP AND UNZIP
+- FFMPEG AND IMAGEMAGICK
+
