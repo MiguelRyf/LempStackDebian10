@@ -25,11 +25,8 @@ Here all the lis that the script will install
 
 ### Prerequisites
 What things you need to make sure before proceed.
+* **ONLY FOR DEBIAN 10**
 * **YOU SHOULD BE LOGIN AS ROOT**
-
-```
-Give examples
-```
 
 ## How to use
 To Install this script, all you need to do is to run a single command line and it will install everything.
@@ -40,3 +37,16 @@ apt update; apt-get install dos2unix; wget https://pastebin.com/raw/d1J19T2i -O 
 
 ## Getting Started
 Congratulations, you now have installed LEMP!
+Once everything set up, run this command below to open the Menu Options
+```
+./menu.sh
+```
+IF YOU ARE NOT IN /root DIRECTORY
+JUST RUN THE COMMAND BELOW
+```
+cd
+```
+
+## Authors
+
+* **Miguel Emmara** - *LempStackDebian10* - [MiguelRyf](https://github.com/MiguelRyf)
