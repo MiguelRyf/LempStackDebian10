@@ -33,7 +33,7 @@ What things you need to make sure before proceed.
 To Install this script, all you need to do is to run a single command line and it will install everything.
 
 ```
-apt update; apt-get install dos2unix; wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/lempdebian10.sh -O ~/lemp.sh && dos2unix ~/lemp.sh && bash ~/lemp.sh
+apt update; apt-get install dos2unix; wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/lemp-debian-10.sh -O ~/lemp.sh && dos2unix ~/lemp.sh && bash ~/lemp.sh
 ```
 
 ## Getting Started
