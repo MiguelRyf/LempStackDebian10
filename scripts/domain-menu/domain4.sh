@@ -196,5 +196,5 @@ echo ""
   echo "Password:   $PASS"
   echo ""
  
-rm -f /root/addsubdomaininstallwordpresscreatedbv3.sh
+rm -f /root/domain4.sh
 exit
