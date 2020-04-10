@@ -24,7 +24,7 @@ Here all the list that the script will install
 - ZIP AND UNZIP
 - FFMPEG AND IMAGEMAGICK
 
-### Prerequisites
+## Prerequisites
 What things you need to make sure before proceed.
 * **ONLY FOR DEBIAN 10**
 * **YOU SHOULD BE LOGIN AS ROOT**
