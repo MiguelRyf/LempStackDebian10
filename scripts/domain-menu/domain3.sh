@@ -116,11 +116,11 @@ mkdir -p /etc/nginx/mycache/$domain
 # Add nginx Vhost for domain
 configName=$domain
 cd $sitesAvailable
-wget https://pastebin.com/raw/U0DUWDUm -O $domain
+wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/vhost-fastcgi -O $domain
 sed -i "s/domain.com/$domain/g" $sitesAvailable$configName
  
 # PHP POOL SETTING
-php7_dotdeb="https://pastebin.com/raw/yBPyB2Y9"
+php7_dotdeb="https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/php7dotdeb"
 wget -q $php7_dotdeb -O /etc/php/7.3/fpm/pool.d/$domain.conf
 sed -i "s/domain.com/$domain/g" /etc/php/7.3/fpm/pool.d/$domain.conf
 echo "" >> /etc/php/7.3/fpm/pool.d/$domain.conf
