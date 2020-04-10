@@ -56,5 +56,5 @@ echo ""
 echo "Your Port number has been changed to ${grn}$userInput${end}"
 echo "${blu}Try re-login your ssh with your new port number.${end}"
 
-rm -f /root/changeportssh.sh
+rm -f /root/changeportsshd.sh
 exit
