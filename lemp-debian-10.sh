@@ -342,7 +342,7 @@ end=$'\e[0m'
     sleep 3
     rm -rf /etc/nginx/nginx.conf >/dev/null 2>&1
     cd /etc/nginx/
-    wget https://pastebin.com/raw/MK9wQ8aX -O nginx.conf >/dev/null 2>&1
+    wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/nginx.conf -O nginx.conf >/dev/null 2>&1
     dos2unix /etc/nginx/nginx.conf >/dev/null 2>&1
     cd
     echo ""
@@ -375,8 +375,8 @@ echo "           __/ |"
 echo "          |___/"
 echo ""
 EOF
-	echo ""
-    sleep 1
+echo ""
+sleep 1
 
 	# PHP POOL SETTING
     echo "${grn}Configuring to make PHP-FPM working with Nginx ...${end}"
@@ -391,7 +391,7 @@ EOF
     echo " *   *    *****     ***      ***     *****    *****      *      *****     ***     *   * "
     echo "******************************************************************************************" 
     sleep 3
-	php7_dotdeb="https://pastebin.com/raw/yBPyB2Y9"
+	php7_dotdeb="https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/php7dotdeb"
 	wget -q $php7_dotdeb -O /etc/php/7.3/fpm/pool.d/$domain.conf >/dev/null 2>&1
 	sed -i "s/domain.com/$domain/g" /etc/php/7.3/fpm/pool.d/$domain.conf
 	echo "" >> /etc/php/7.3/fpm/pool.d/$domain.conf
@@ -405,9 +405,9 @@ EOF
     systemctl restart nginx >/dev/null 2>&1
     systemctl restart php7.3-fpm.service >/dev/null 2>&1
 
-		# Menu Script
+	 # Menu Script
 	cd
-	wget https://pastebin.com/raw/wPyFPHF1 -O menu.sh >/dev/null 2>&1
+	wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/menu.sh -O menu.sh >/dev/null 2>&1
 	dos2unix menu.sh >/dev/null 2>&1
 	chmod +x menu.sh
 
@@ -431,7 +431,7 @@ EOF
 	echo "			      	    *      *   *	"
 	echo "			      	    *      *   *	"
 	echo "			      	    *       ***	"
-    echo ""
+    	echo ""
 
 	echo " *   *    *****     ***     *   *    *****    *        *****    *****     ***     *   * "
 	echo " *   *      *      *   *    *   *    *        *          *      *        *   *    *   * "
@@ -443,5 +443,6 @@ EOF
   	echo "********************* OPEN MENU BY TYPING ${grn}./menu.sh${end} ******************************"
 	echo ""
 
-rm -f /root/lemp.sh
+rm -f /root/lemp-debian-10.sh
 exit
+v
