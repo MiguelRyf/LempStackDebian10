@@ -104,5 +104,5 @@ echo ""
 	echo "${grn}$domain/backup-$domainClear2.zip${end}"
 	echo ""
  
-rm -f /root/backupweb.sh
+rm -f /root/backupwebdata.sh
 exit
