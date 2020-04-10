@@ -79,73 +79,11 @@ else
     exit;
 fi
 
-# Add nginx Vhost.
+# Change vhost to no fastcgi cache.
 configName=$domain
-dollar='$'
-request_uri="${dollar}request_uri"
-uri="${dollar}uri"
-args=${dollar}args
-document_root="${dollar}document_root"
-fastcgi_script_name="${dollar}fastcgi_script_name"
-dollar1="${dollar}1"
-dollar2="${dollar}2"
- 
-# Add nginx Vhost for domain
-if ! echo "server {
-   listen 80;
-   root /var/www/$domain;
-   index index.php index.html index.htm;
-   error_log /var/log/nginx/$domain.error.log;
-   server_name $domain www.$domain;
- 
-   location / {
-       try_files $uri $uri/ /index.php?$args;
-   }
- 
-   location ~* /(?:uploads|files)/.*\.(asp|bat|cgi|htm|html|ico|js|jsp|md|php|pl|py|sh|shtml|swf|twig|txt|yaml|yml|zip|gz|tar|bzip2|7z)$dollar { deny all; }
-   location ~ \.php$dollar {
-       fastcgi_split_path_info ^(.+\.php)(/.+)$dollar;
-       fastcgi_pass unix:/var/run/php/php7.3-fpm.sock;
-       fastcgi_index index.php;
-       fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-       include fastcgi_params;
-   }
- 
-   location = /favicon.ico {
-       log_not_found off;
-       access_log off;
-   }
-
- 	location ^~ /data {
-  		deny all;
-	}
-
-   location = /robots.txt {
-           try_files $uri $uri/ /index.php?$args;
-       allow all;
-       log_not_found off;
-       access_log off;
-   }
- 
-   location ~* \.(jpg|jpeg|png|gif|ico|css|js|eot|ttf|otf|woff|svg)$dollar {
-       expires 365d;
-   }
- 
-   location ~ /\.ht {
-       deny all;
-   }
- 
-   rewrite ^/sitemap_index\.xml$dollar /index.php?sitemap=1 last;
-   rewrite ^/([^/]+?)-sitemap([0-9]+)?\.xml$dollar /index.php?sitemap=$dollar1&sitemap_n=$dollar2 last;
- 
-}
-" > $sitesAvailable$configName
-then
-    echo "There is an ERROR create $configName file"
-    exit;
-else
-    echo "New Virtual Host Created"
-fi
+cd $sitesAvailable
+wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/vhost-nocache -O $domain
+sed -i "s/domain.com/$domain/g" $sitesAvailable$configName
 
 # Intstall RianLoop
 rm -rf /var/www/$domain/*
