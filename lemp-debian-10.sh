@@ -5,7 +5,7 @@
 # One Click LEMP Debian 10 Installation Script
 #--------------------------------------------------
 # Software version:
-# 1. OS: Debian 10 (Stretch) 64 bit
+# 1. OS: Debian 10 (Buster) 64 bit
 # 2. Nginx: 1.14.2
 # 3. MariaDB: 10.3.22-MariaDB-0+deb10u1
 # 4. PHP 7: 7.3.14-1~deb10u1
