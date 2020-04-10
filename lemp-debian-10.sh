@@ -2,9 +2,7 @@
 
 # Script author: Miguel Emmara
 # Script site: https://www.miguelemmara.me
-# Script date: 09/04/2020
-# Script ver: 2.0
-# Script use to install LEMP stack on Debian 10
+# One Click LEMP Debian 10 Installation Script
 #--------------------------------------------------
 # Software version:
 # 1. OS: Debian 10 (Stretch) 64 bit
