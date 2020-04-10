@@ -23,5 +23,5 @@ MYSQL_SCRIPT
 echo "${end}___________"
 echo ""
 
-rm -f /root/showdatabases.sh
+rm -f /root/show-databases.sh
 exit
