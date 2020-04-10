@@ -2,6 +2,7 @@
 # Script author: Miguel Emmara
 # Add Domian Only
 
+#
 set -e
 
 # Colours
