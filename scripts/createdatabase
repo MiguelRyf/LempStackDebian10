@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script author: Miguel
-# Script ver: 1.0
+# Create database
 
 # The script will fail at the first error encountered
 set -e
