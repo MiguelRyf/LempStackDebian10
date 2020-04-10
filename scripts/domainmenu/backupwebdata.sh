@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script author: Miguel
-#Back up web data
+# Back up web data
  
 set -e
  
