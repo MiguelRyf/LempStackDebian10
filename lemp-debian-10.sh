@@ -271,6 +271,10 @@ end=$'\e[0m'
 	cd /etc/ssl/certs/
 	openssl dhparam -dsaparam -out dhparam.pem 4096 >/dev/null 2>&1
 	cd
+	ufw allow 'Nginx Full'
+	ufw delete allow 'Nginx HTTP'
+	echo ""
+	sleep 1
 
     # Install AB BENCHMARKING TOOL
     echo "${grn}Installing AB BENCHMARKING TOOL ...${end}"
