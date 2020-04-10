@@ -74,5 +74,5 @@ echo "Username:   $USR"
 echo "Password:   $PASS"
 echo ""
 
-rm -f /root/createdatabase.sh
+rm -f /root/create-database.sh
 exit
