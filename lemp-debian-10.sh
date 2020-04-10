@@ -202,9 +202,9 @@ end=$'\e[0m'
    	rm -f ioncube_loaders_lin_x86-64.tar.gz >/dev/null 2>&1
   	# Copy files to modules folder
   	sudo cp "ioncube/ioncube_loader_lin_${PHP_VERSION}.so" $MODULES >/dev/null 2>&1
-    echo "zend_extension=$MODULES/ioncube_loader_lin_${PHP_VERSION}.so" >> /etc/php/7.3/fpm/php.ini >/dev/null 2>&1
-    echo "zend_extension=$MODULES/ioncube_loader_lin_${PHP_VERSION}.so" >> /etc/php/7.3/cli/php.ini >/dev/null 2>&1
-	
+    echo "zend_extension=$MODULES/ioncube_loader_lin_${PHP_VERSION}.so" >> /etc/php/7.3/fpm/php.ini
+    echo "zend_extension=$MODULES/ioncube_loader_lin_${PHP_VERSION}.so" >> /etc/php/7.3/cli/php.ini
+
 	rm -rf ioncube
     systemctl restart php7.3-fpm.service >/dev/null 2>&1
     systemctl restart nginx >/dev/null 2>&1
@@ -213,8 +213,8 @@ end=$'\e[0m'
     apt-get install php-dev libmcrypt-dev php-pear -y >/dev/null 2>&1
     pecl channel-update pecl.php.net >/dev/null 2>&1
     yes | pecl install channel://pecl.php.net/mcrypt-1.0.2 >/dev/null 2>&1
-    echo "extension=$MODULES/mcrypt.so" >> /etc/php/7.3/fpm/php.ini >/dev/null 2>&1
-    echo "extension=$MODULES/mcrypt.so" >> /etc/php/7.3/cli/php.ini >/dev/null 2>&1
+    echo "extension=$MODULES/mcrypt.so" >> /etc/php/7.3/fpm/php.ini
+    echo "extension=$MODULES/mcrypt.so" >> /etc/php/7.3/cli/php.ini
     systemctl restart php7.3-fpm.service >/dev/null 2>&1
     systemctl restart nginx >/dev/null 2>&1
     echo ""
@@ -443,4 +443,3 @@ sleep 1
 
 rm -f /root/lemp-debian-10.sh
 exit
-v
