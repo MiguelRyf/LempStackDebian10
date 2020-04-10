@@ -93,7 +93,7 @@ chown www-data:www-data /var/www/
 # Change vhost to no fastcgi cache.
 configName=$domain
 cd $sitesAvailable
-wget https://pastebin.com/raw/r8R588YJ -O $domain
+wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/vhost-nocache -O $domain
 sed -i "s/domain.com/$domain/g" $sitesAvailable$configName
 
 # Create Database For Filerun
