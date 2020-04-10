@@ -271,8 +271,8 @@ end=$'\e[0m'
 	cd /etc/ssl/certs/
 	openssl dhparam -dsaparam -out dhparam.pem 4096 >/dev/null 2>&1
 	cd
-	ufw allow 'Nginx Full'
-	ufw delete allow 'Nginx HTTP'
+	ufw allow 'Nginx Full' >/dev/null 2>&1
+	ufw delete allow 'Nginx HTTP' >/dev/null 2>&1
 	echo ""
 	sleep 1
 
