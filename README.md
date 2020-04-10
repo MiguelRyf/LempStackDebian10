@@ -34,6 +34,7 @@ To Install this script, all you need to do is to run a single command line and i
 
 ```
 apt update; apt-get install dos2unix; wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/lemp-debian-10.sh -O ~/lemp-debian-10.sh && dos2unix ~/lemp-debian-10.sh && bash ~/lemp-debian-10.sh
+
 ```
 
 ## Getting Started
