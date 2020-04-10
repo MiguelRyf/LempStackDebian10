@@ -121,5 +121,5 @@ echo "           __/ |"
 echo "          |___/"
 echo ""
 echo "Domain $domain has been successfuly deleted along with database and SSL!"
-rm -f /root/deleteeverythingv3.sh
+rm -f /root/delete.sh
 exit
