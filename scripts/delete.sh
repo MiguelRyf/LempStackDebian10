@@ -1,7 +1,6 @@
 #!/bin/bash
 # Script author: Miguel
 # Delete Everything
-# Script ver: 3.0
  
 set -e
  
