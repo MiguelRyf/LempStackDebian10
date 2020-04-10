@@ -1,7 +1,6 @@
 #!/bin/bash
 # Script author: Miguel
 # Install Filerun
-# Menu V: 3.0
  
 set -e
  
