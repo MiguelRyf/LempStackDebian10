@@ -158,5 +158,5 @@ echo "Complete! Your new $domain subdomain has been added!"
   echo "Username:   user_$domainClear2"
   echo "Password:   $PASS"
   echo ""
-rm -f /root/addsubdomainonlyv3.sh
+rm -f /root/domain3.sh
 exit
