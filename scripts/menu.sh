@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script author: Miguel
-# Menu V: 3.0
+# Main Menu of the scripts
  
 set -e
  
@@ -70,27 +70,27 @@ read -p "Choose your option [1-11]: " choice
       sub_menu2;
       ;;
   
-      3) wget https://pastebin.com/raw/VQ4ax66A -O ~/showdomain.sh && dos2unix ~/showdomain.sh && bash ~/showdomain.sh;
+      3) wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/main-menu/showdomain.sh -O ~/showdomain.sh && dos2unix ~/showdomain.sh && bash ~/showdomain.sh;
             read -p "${grn}Press [Enter] key to continue...${end}" readEnterKey;
           main_menu;
           ;;
 
-      4) wget https://pastebin.com/raw/cB7vTv0p -O ~/showdatabases.sh && dos2unix ~/showdatabases.sh && bash ~/showdatabases.sh;
+      4) wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/database-menu/show-databases.sh -O ~/show-databases.sh && dos2unix ~/show-databases.sh && bash ~/show-databases.sh;
             read -p "${grn}Press [Enter] key to continue...${end}" readEnterKey;
           main_menu;
           ;;
 
-      5) wget https://pastebin.com/raw/j9e6whVt -O ~/rainloop.sh && dos2unix ~/rainloop.sh && bash ~/rainloop.sh;
+      5) wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/addons/rainloop.sh -O ~/rainloop.sh && dos2unix ~/rainloop.sh && bash ~/rainloop.sh;
             read -p "${grn}Press [Enter] key to continue...${end}" readEnterKey;
           main_menu;
           ;;
 
-      6) wget https://pastebin.com/raw/eFFdF55U -O ~/filerun.sh && dos2unix ~/filerun.sh && bash ~/filerun.sh;
+      6) wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/addons/filerun.sh -O ~/filerun.sh && dos2unix ~/filerun.sh && bash ~/filerun.sh;
             read -p "${grn}Press [Enter] key to continue...${end}" readEnterKey;
           main_menu;
           ;;
 
-   7) wget https://pastebin.com/raw/x9cxTiT4 -O ~/changeportssh.sh && dos2unix ~/changeportssh.sh && bash ~/changeportssh.sh;
+   7) wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/main-menu/changeportsshd.sh -O ~/changeportssh.sh && dos2unix ~/changeportssh.sh && bash ~/changeportssh.sh;
             read -p "${grn}Press [Enter] key to continue...${end}" readEnterKey;
           main_menu;
           ;;
@@ -110,7 +110,7 @@ read -p "Choose your option [1-11]: " choice
           main_menu;
           ;;
 
-   10) wget https://pastebin.com/raw/5zJ0HqPb -O ~/restartserver.sh && dos2unix ~/restartserver.sh && bash ~/restartserver.sh;
+   10) wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/main-menu/restartserver.sh -O ~/restartserver.sh && dos2unix ~/restartserver.sh && bash ~/restartserver.sh;
             read -p "${grn}Press [Enter] key to continue...${end}" readEnterKey;
           main_menu;
           ;;
@@ -183,37 +183,37 @@ read -p "Choose your option [1-9]: " submenudomain
     else
       case $submenudomain in
 
-      1) wget https://pastebin.com/raw/QjsHUZSt -O ~/adddomainonlyv3.sh && dos2unix ~/adddomainonlyv3.sh && bash ~/adddomainonlyv3.sh;
+      1) wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/domain-menu/domain1.sh -O ~/domain1.sh && dos2unix ~/domain1.sh && bash ~/domain1.sh;
             read -p "${grn}Press [Enter] key to continue...${end}" readEnterKey;
       sub_menu1;
             ;;
 
-      2) wget https://pastebin.com/raw/zjV3JPeR -O ~/adddomaininstallwordpresscreatedbv3.sh && dos2unix ~/adddomaininstallwordpresscreatedbv3.sh && bash ~/adddomaininstallwordpresscreatedbv3.sh;
+      2) wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/domain-menu/domain2.sh -O ~/domain2.sh && dos2unix ~/domain2.sh && bash ~/domain2.sh;
             read -p "${grn}Press [Enter] key to continue...${end}" readEnterKey;
       sub_menu1;
             ;;
 
-      3) wget https://pastebin.com/raw/STPQu4m2 -O ~/addsubdomainonlyv3.sh && dos2unix ~/addsubdomainonlyv3.sh && bash ~/addsubdomainonlyv3.sh;
+      3) wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/domain-menu/domain3.sh -O ~/domain3.sh && dos2unix ~/domain3.sh && bash ~/domain3.sh;
             read -p "${grn}Press [Enter] key to continue...${end}" readEnterKey;
           sub_menu1;
           ;;
 
-      4) wget https://pastebin.com/raw/adyh06NL -O ~/addsubdomaininstallwordpresscreatedbv3.sh && dos2unix ~/addsubdomaininstallwordpresscreatedbv3.sh && bash ~/addsubdomaininstallwordpresscreatedbv3.sh;
+      4) wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/domain-menu/domain4.sh -O ~/domain4.sh && dos2unix ~/domain4.sh && bash ~/domain4.sh;
       read -p "${grn}Press [Enter] key to continue...${end}" readEnterKey;
           sub_menu1;
           ;;
 
-      5) wget https://pastebin.com/raw/VQ4ax66A -O ~/showdomain.sh && dos2unix ~/showdomain.sh && bash ~/showdomain.sh;
+      5) wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/main-menu/showdomain.sh -O ~/showdomain.sh && dos2unix ~/showdomain.sh && bash ~/showdomain.sh;
       read -p "${grn}Press [Enter] key to continue...${end}" readEnterKey;
           sub_menu1;
           ;;
 
-      6) wget https://pastebin.com/raw/SM4cSqbw -O ~/deleteeverythingv3.sh && dos2unix ~/deleteeverythingv3.sh && bash ~/deleteeverythingv3.sh;
+      6) wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/domain-menu/delete.sh -O ~/delete.sh && dos2unix ~/delete.sh && bash ~/delete.sh;
       read -p "${grn}Press [Enter] key to continue...${end}" readEnterKey;
           sub_menu1;
           ;;
 
-   7) wget https://pastebin.com/raw/CjJH1jdh -O ~/backupweb.sh && dos2unix ~/backupweb.sh && bash ~/backupweb.sh;
+   7) wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/domain-menu/backupwebdata.sh -O ~/backupwebdata.sh && dos2unix ~/backupwebdata.sh && bash ~/backupwebdata.sh;
             read -p "${grn}Press [Enter] key to continue...${end}" readEnterKey;
           sub_menu1;
           ;;
@@ -279,17 +279,17 @@ read -p "Choose your option [1-5]: " submenudomain2
     else
       case $submenudomain2 in
 
-    1) wget https://pastebin.com/raw/wUGQGrCJ -O ~/createdatabase.sh && dos2unix ~/createdatabase.sh && bash ~/createdatabase.sh;
+    1) wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/database-menu/create-database.sh -O ~/create-database.sh && dos2unix ~/create-database.sh && bash ~/create-database.sh;
             read -p "${grn}Press [Enter] key to continue...${end}" readEnterKey;
           sub_menu2;
           ;;
 
-    2) wget https://pastebin.com/raw/Us1Zs2un -O ~/deletedatabase.sh && dos2unix ~/deletedatabase.sh  && bash ~/deletedatabase.sh;
+    2) wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/database-menu/delete-database.sh -O ~/delete-database.sh && dos2unix ~/delete-database.sh  && bash ~/delete-database.sh;
             read -p "${grn}Press [Enter] key to continue...${end}" readEnterKey;
           sub_menu2;
           ;;
 
-      3) wget https://pastebin.com/raw/cB7vTv0p -O ~/showdatabases.sh && dos2unix ~/showdatabases.sh && bash ~/showdatabases.sh;
+      3) wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/database-menu/show-databases.sh -O ~/show-databases.sh && dos2unix ~/show-databases.sh && bash ~/show-databases.sh;
             read -p "${grn}Press [Enter] key to continue...${end}" readEnterKey;
           sub_menu2;
           ;;
