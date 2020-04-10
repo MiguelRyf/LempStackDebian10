@@ -159,5 +159,5 @@ echo "Complete! Your new $domain domain has been added!"
   echo "Username:   user_$domainClear2"
   echo "Password:   $PASS"
   echo ""
-rm -f /root/adddomainonlyv3.sh
+rm -f /root/domain1.sh
 exit
