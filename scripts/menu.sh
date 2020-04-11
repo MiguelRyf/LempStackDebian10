@@ -117,7 +117,7 @@ read -p "Choose your option [1-11]: " choice
 
      11)  clear;
             echo "Bye!";
-            echo "You can open the Main Menu by typing ${grn}./menuv3.sh${end}";
+            echo "You can open the Main Menu by typing ${grn}./menu.sh${end}";
             exit;
             ;;
 
@@ -224,7 +224,7 @@ read -p "Choose your option [1-9]: " submenudomain
 
      9)   clear;
             echo "Bye!";
-            echo "You can open the Main Menu by typing ${grn}./menuv3.sh${end}";
+            echo "You can open the Main Menu by typing ${grn}./menu.sh${end}";
             exit;
             ;;
 
@@ -300,7 +300,7 @@ read -p "Choose your option [1-5]: " submenudomain2
 
      5)   clear;
             echo "Bye!";
-            echo "You can open the Main Menu by typing ${grn}./menuv3.sh${end}";
+            echo "You can open the Main Menu by typing ${grn}./menu.sh${end}";
             exit;
             ;; 
 
