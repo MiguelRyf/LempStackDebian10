@@ -17,6 +17,7 @@ Here all the list that the script will install
 - Memcached
 - FASTCGI_CACHE
 - IONCUBE
+- MCRYPT
 - HTOP
 - NETSTAT
 - OPEN SSL
