@@ -85,10 +85,11 @@ rm -rf /var/www/$domain/*
 cd /var/www/$domain/
 wget -O FileRun.zip http://www.filerun.com/download-latest
 unzip FileRun.zip
-chown -R www-data:www-data /var/www/$domain/
-chown -R root:root /var/www/$domain
+chown -R www-data:www-data /var/www/$domain
 chown -R www-data:www-data /var/www/$domain/system/data
 chown www-data:www-data /var/www/
+chown -R $USER:$USER /var/www/$domain		# JUST TO MAKE SURE
+chown -R www-data:www-data /var/www/$domain	# JUST TO MAKE SURE
 
 # Change vhost to no fastcgi cache.
 configName=$domain
@@ -96,7 +97,7 @@ cd $sitesAvailable
 wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/vhost-nocache -O $domain
 sed -i "s/domain.com/$domain/g" $sitesAvailable$configName
 
-# Create Database For Filerun
+# Create NEW Database For Filerun
 domainClear=${domain//./} # Domain name variable
 domainClear2=${domainClear//-/} # Domain name variable 
 password_filerun=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 12 | head -n 1` # Generate random password and save it to password_filerun variable.
