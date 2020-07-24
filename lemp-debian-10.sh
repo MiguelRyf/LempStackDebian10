@@ -22,6 +22,13 @@ mag=$'\e[1;35m'
 cyn=$'\e[1;36m'
 end=$'\e[0m'
 
+## To ensure correct Debian version is installed
+DEBIAN_VERSION=`lsb_release -rs`
+if [[ "${DEBIAN_VERSION}" != "10" ]]; then
+    echo -e "Sorry, This script is designed for Debian 10 (Buster) 64 bit."
+    exit 1
+fi
+
     # Function update os
     clear
     echo "${grn}Starting update os ...${end}"
