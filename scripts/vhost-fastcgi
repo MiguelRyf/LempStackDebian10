@@ -18,22 +18,29 @@ server {
   location ~*
   /(?:uploads|files)/.*\.(asp|bat|cgi|htm|html|ico|js|jsp|md|php|pl|py|sh|shtml|swf|twig|txt|yaml|yml|zip|gz|tar|bzip2|7z)$ { deny all; }
 
-   location ~ \.php$ {
-       fastcgi_split_path_info ^(.+\.php)(/.+)$;
-       fastcgi_pass unix:/var/run/php/php7.3-domain.com-fpm.sock;
-       fastcgi_index index.php;
-       fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-       include fastcgi_params;
-       fastcgi_cache domain.com-mycache;
-       fastcgi_cache_key $scheme$request_method$host$request_uri;
-       fastcgi_cache_valid 200 301 302 1m;
-       fastcgi_cache_use_stale updating error timeout invalid_header http_500;
-       fastcgi_pass_header Set-Cookie;
-       fastcgi_pass_header Cookie;
-       fastcgi_ignore_headers Cache-Control Expires Set-Cookie;
-       fastcgi_cache_bypass $mycache_NO_cache;
-       fastcgi_no_cache $mycache_NO_cache;
-       add_header X-Cache $upstream_cache_status;
+location ~ \.php$ {
+      fastcgi_split_path_info ^(.+\.php)(/.+)$;
+      fastcgi_pass unix:/var/run/php/php7.3-miguelemmara.me-fpm.sock;
+      fastcgi_index index.php;
+      fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+      include fastcgi_params;
+      fastcgi_cache miguelemmara.me-mycache;
+      fastcgi_cache_key $scheme$request_method$host$request_uri;
+      fastcgi_cache_valid 200 301 302 1m;
+      fastcgi_cache_use_stale updating error timeout invalid_header http_500;
+      fastcgi_pass_header Set-Cookie;
+      fastcgi_pass_header Cookie;
+      fastcgi_ignore_headers Cache-Control Expires Set-Cookie;
+      fastcgi_cache_bypass $mycache_NO_cache;
+      fastcgi_no_cache $mycache_NO_cache;
+    	add_header X-Powered-By "Miguel Emmara";
+    	add_header Strict-Transport-Security "max-age=15552000" always; ## 180 days
+    	add_header X-FastCGI-Cache $upstream_cache_status;
+    	add_header X-Frame-Options SAMEORIGIN;
+    	add_header X-Content-Type-Options nosniff;
+    	add_header X-XSS-Protection "1; mode=block";
+    	add_header Referrer-Policy "strict-origin-when-cross-origin";
+    	add_header Permissions-Policy "accelerometer=(), ambient-light-sensor=(), autoplay=*, battery=(), camera=(), display-capture=*, document-domain=*, encrypted-media=*, fullscreen=*, geolocation=(self), gyroscope=(), layout-animations=*, legacy-image-formats=*, magnetometer=(), microphone=(self), midi=(), oversized-images=*, payment=*, picture-in-picture=*, publickey-credentials-get=*, sync-xhr=*, usb=(), vibrate=(), wake-lock=(), xr-spatial-tracking=()";
    }
 
 #Cache everything by default
