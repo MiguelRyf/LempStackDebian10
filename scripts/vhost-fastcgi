@@ -20,11 +20,11 @@ server {
 
 location ~ \.php$ {
       fastcgi_split_path_info ^(.+\.php)(/.+)$;
-      fastcgi_pass unix:/var/run/php/php7.3-miguelemmara.me-fpm.sock;
+      fastcgi_pass unix:/var/run/php/php7.3-domain.com-fpm.sock;
       fastcgi_index index.php;
       fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
       include fastcgi_params;
-      fastcgi_cache miguelemmara.me-mycache;
+      fastcgi_cache domain.com-mycache;
       fastcgi_cache_key $scheme$request_method$host$request_uri;
       fastcgi_cache_valid 200 301 302 1m;
       fastcgi_cache_use_stale updating error timeout invalid_header http_500;
