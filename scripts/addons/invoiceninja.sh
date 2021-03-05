@@ -86,7 +86,7 @@ cd /var/www/$domain/
 wget https://github.com/invoiceninja/invoiceninja/releases/download/v5.1.14-release/invoiceninja.zip
 unzip invoiceninja.zip
 chown -R www-data:www-data /var/www/$domain
-chown -R www-data:www-data /var/www/$domain/system/data
+chown -R www-data:www-data /var/www/$domain
 sudo chmod -R g+s /var/www/$domain
 chown www-data:www-data /var/www/
 chown -R $USER:$USER /var/www/$domain		# JUST TO MAKE SURE
