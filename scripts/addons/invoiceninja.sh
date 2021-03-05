@@ -93,7 +93,7 @@ chown -R $USER:$USER /var/www/$domain		# JUST TO MAKE SURE
 chown -R www-data:www-data /var/www/$domain	# JUST TO MAKE SURE
 
 # Installing and configuring Invoice Ninja server software and dependencies
-sudo php /usr/local/bin/composer install --no-dev
+sudo php /usr/local/bin/composer install --no-dev -y
 
 # Change vhost to no fastcgi cache made for InvoiceNinja
 configName=$domain
@@ -104,11 +104,11 @@ sed -i "s/domain.com/$domain/g" $sitesAvailable$configName\
 # Create NEW Database For Invoice Ninja
 domainClear=${domain//./} # Domain name variable
 domainClear2=${domainClear//-/} # Domain name variable 
-password_invoiceNinja=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 12 | head -n 1` # Generate random password and save it to password_filerun variable.
+password_invoiceNinja=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 12 | head -n 1` # Generate random password and save it to password_invoiceNinja variable.
 mysql -uroot <<MYSQL_SCRIPT
 CREATE DATABASE invoice_db_$domainClear2;
 CREATE USER 'invoice_usr_$domainClear2'@'localhost' IDENTIFIED BY '$password_invoiceNinja';
-GRANT ALL PRIVILEGES ON filerun_db_$domainClear2.* TO 'filerun_usr_$domainClear2'@'localhost';
+GRANT ALL PRIVILEGES ON invoice_db_$domainClear2.* TO 'invoice_usr_$domainClear2'@'localhost';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
