@@ -91,6 +91,9 @@ chown www-data:www-data /var/www/
 chown -R $USER:$USER /var/www/$domain		# JUST TO MAKE SURE
 chown -R www-data:www-data /var/www/$domain	# JUST TO MAKE SURE
 
+# Installing and configuring Invoice Ninja server software and dependencies
+sudo php /usr/local/bin/composer install --no-dev
+
 # Change vhost to no fastcgi cache made for InvoiceNinja
 configName=$domain
 cd $sitesAvailable
