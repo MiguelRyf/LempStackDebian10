@@ -133,7 +133,7 @@ echo "           __/ |"
 echo "          |___/"
 echo ""
  
-    echo "Complete! $domain has been installed with Filerun!"
+    echo "Complete! $domain has been installed with Invoice Ninja!"
     echo "Navigate to ${grn}$domain${end} in your browser to configure Invoice Ninja"
 	echo ""
 	echo "Database Name: invoice_db_$domainClear2"
