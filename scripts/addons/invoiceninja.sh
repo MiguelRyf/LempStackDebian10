@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script author: Miguel
-# Install Filerun
+# Install Invoice Ninja
  
 set -e
  
@@ -32,7 +32,7 @@ do
 clear
 clear
 echo "########################### SERVER CONFIGURED BY MIGUEL EMMARA ###########################"
-echo "                                   ${grn}INSTALL FILERUN${end}"
+echo "                                   ${grn}INSTALL INVOICE NINJA${end}"
 echo " __  __ _                  _   ______"                                    
 echo "|  \/  (_)                | | |  ____|                                    "
 echo "| \  / |_  __ _ _   _  ___| | | |__   _ __ ___  _ __ ___   __ _ _ __ __ _ "
