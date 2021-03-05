@@ -45,7 +45,7 @@ echo ""
 echo "${grn}Press [CTRL + C] to cancel...${end}"
 
 echo "Note* this will erase all of your data on your domain folder, then install Invoice Ninja!"
-echo "Preferably install Invoice Ninja on your subdomain [eg, manage.domain.com]"
+echo "Preferably install Invoice Ninja on your subdomain [eg, invoiceninja.domain.com]"
 echo "Feel free to backup any important files before hand!"
 echo ""
 echo "Here all the domain on you server"
