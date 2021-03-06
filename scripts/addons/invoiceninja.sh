@@ -125,6 +125,7 @@ MYSQL_SCRIPT
 # Optimize artisan
 cd $domain
 php artisan optimize
+cd
 
 # Restart nginx and php-fpm
 echo "Restart Nginx & PHP-FPM ..."
