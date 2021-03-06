@@ -102,13 +102,23 @@ wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/script
 sed -i "s/domain.com/$domain/g" $sitesAvailable$configName\
 
 # Create NEW Database For Invoice Ninja
-domainClear=${domain//./} # Domain name variable
-domainClear2=${domainClear//-/} # Domain name variable 
-password_invoiceNinja=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 12 | head -n 1` # Generate random password and save it to password_invoiceNinja variable.
+#domainClear=${domain//./} # Domain name variable
+#domainClear2=${domainClear//-/} # Domain name variable 
+#password_invoiceNinja=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 12 | head -n 1` # Generate random password and save it to password_invoiceNinja variable.
+#mysql -uroot <<MYSQL_SCRIPT
+#CREATE DATABASE invoice_db_$domainClear2;
+#CREATE USER 'invoice_usr_$domainClear2'@'localhost' IDENTIFIED BY '$password_invoiceNinja';
+#GRANT ALL PRIVILEGES ON invoice_db_$domainClear2.* TO 'invoice_usr_$domainClear2'@'localhost';
+#FLUSH PRIVILEGES;
+#MYSQL_SCRIPT
+
+ninjaDatabase=$ninja
+ninjaUser=$ninja
+ninjaPassword=$ninja
 mysql -uroot <<MYSQL_SCRIPT
-CREATE DATABASE invoice_db_$domainClear2;
-CREATE USER 'invoice_usr_$domainClear2'@'localhost' IDENTIFIED BY '$password_invoiceNinja';
-GRANT ALL PRIVILEGES ON invoice_db_$domainClear2.* TO 'invoice_usr_$domainClear2'@'localhost';
+CREATE SCHEMA `ninjaDatabase` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE USER 'ninjaUser'@'localhost' IDENTIFIED BY 'ninjaPassword';
+GRANT ALL PRIVILEGES ON `ninjaDatabase`.* TO 'ninjaUser'@'localhost';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
