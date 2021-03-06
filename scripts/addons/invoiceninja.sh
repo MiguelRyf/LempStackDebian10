@@ -122,6 +122,10 @@ GRANT ALL PRIVILEGES ON `ninjaDatabase`.* TO 'ninjaUser'@'localhost';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
+# Optimize artisan
+cd $domain
+php artisan optimize
+
 # Restart nginx and php-fpm
 echo "Restart Nginx & PHP-FPM ..."
 echo ""
