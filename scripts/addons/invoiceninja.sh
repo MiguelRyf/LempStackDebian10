@@ -83,8 +83,8 @@ fi
 # Install InvoiceNinja
 rm -rf /var/www/$domain/*
 cd /var/www/$domain/
-wget https://github.com/invoiceninja/invoiceninja/archive/v5.1.10.zip
-unzip invoiceninja-5.1.10.zip
+wget https://github.com/invoiceninja/invoiceninja/releases/download/v5.1.14-release/invoiceninja.zip
+unzip invoiceninja.zip
 chown -R www-data:www-data /var/www/$domain
 chown -R www-data:www-data /var/www/$domain
 sudo chmod -R g+s /var/www/$domain
