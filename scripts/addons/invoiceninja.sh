@@ -112,9 +112,9 @@ sed -i "s/domain.com/$domain/g" $sitesAvailable$configName\
 #FLUSH PRIVILEGES;
 #MYSQL_SCRIPT
 
-ninjaDatabase=$ninja
-ninjaUser=$ninja
-ninjaPassword=$ninja
+ninjaDatabase='ninja'
+ninjaUser='ninja'
+ninjaPassword='ninja'
 mysql -uroot <<MYSQL_SCRIPT
 CREATE SCHEMA `ninjaDatabase` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 CREATE USER 'ninjaUser'@'localhost' IDENTIFIED BY 'ninjaPassword';
@@ -150,9 +150,14 @@ echo ""
     echo "Complete! $domain has been installed with Invoice Ninja!"
     echo "Navigate to ${grn}$domain${end} in your browser to configure Invoice Ninja"
 	echo ""
-	echo "Database Name: invoice_db_$domainClear2"
-	echo "User Name: invoice_usr_$domainClear2"
-	echo "Password: $password_invoiceNinja"
+	#echo "Database Name: invoice_db_$domainClear2"
+	#echo "User Name: invoice_usr_$domainClear2"
+	#echo "Password: $password_invoiceNinja"
+	
+	echo "Database Name: $ninjaDatabase"
+	echo "User Name: $ninjaUser"
+	echo "Password: $ninjaPassword"
+	
 	echo ""
  
 rm -f /root/invoiceninja.sh
