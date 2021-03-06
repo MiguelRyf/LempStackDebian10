@@ -123,7 +123,7 @@ sed -i "s/domain.com/$domain/g" $sitesAvailable$configName\
 #MYSQL_SCRIPT
 
 # Optimize artisan
-cd $domain
+cd var/www/$domain
 php artisan optimize
 cd
 
@@ -155,11 +155,11 @@ echo ""
 	#echo "User Name: invoice_usr_$domainClear2"
 	#echo "Password: $password_invoiceNinja"
 	
-	echo "Database Name: $ninjaDatabase"
-	echo "User Name: $ninjaUser"
+	#echo "Database Name: $ninjaDatabase"
+	#echo "User Name: $ninjaUser"
 	echo "Password: $ninjaPassword"
 	
-	echo ""
+	#echo ""
  
 rm -f /root/invoiceninja.sh
 exit
