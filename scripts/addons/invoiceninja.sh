@@ -157,7 +157,7 @@ echo ""
 	
 	#echo "Database Name: $ninjaDatabase"
 	#echo "User Name: $ninjaUser"
-	echo "Password: $ninjaPassword"
+	#echo "Password: $ninjaPassword"
 	
 	#echo ""
  
