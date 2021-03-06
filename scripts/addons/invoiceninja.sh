@@ -112,15 +112,15 @@ sed -i "s/domain.com/$domain/g" $sitesAvailable$configName\
 #FLUSH PRIVILEGES;
 #MYSQL_SCRIPT
 
-ninjaDatabase='ninja'
-ninjaUser='ninja'
-ninjaPassword='ninja'
-mysql -uroot <<MYSQL_SCRIPT
-CREATE DATABASE $ninjaDatabase;
-CREATE USER '$ninjaUser'@'localhost' IDENTIFIED BY '$ninjaPassword';
-GRANT ALL PRIVILEGES ON $DB.* TO '$ninjaUser'@'localhost';
-FLUSH PRIVILEGES;
-MYSQL_SCRIPT
+#ninjaDatabase='ninja'
+#ninjaUser='ninja'
+#ninjaPassword='ninja'
+#mysql -uroot <<MYSQL_SCRIPT
+#CREATE DATABASE $ninjaDatabase;
+#CREATE USER '$ninjaUser'@'localhost' IDENTIFIED BY '$ninjaPassword';
+#GRANT ALL PRIVILEGES ON $DB.* TO '$ninjaUser'@'localhost';
+#FLUSH PRIVILEGES;
+#MYSQL_SCRIPT
 
 # Optimize artisan
 cd $domain
