@@ -123,7 +123,7 @@ sed -i "s/domain.com/$domain/g" $sitesAvailable$configName\
 #MYSQL_SCRIPT
 
 # Optimize artisan
-cd var/www/$domain
+cd /var/www/$domain
 php artisan optimize
 cd
 
