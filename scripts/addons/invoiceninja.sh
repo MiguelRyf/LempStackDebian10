@@ -116,9 +116,9 @@ ninjaDatabase='ninja'
 ninjaUser='ninja'
 ninjaPassword='ninja'
 mysql -uroot <<MYSQL_SCRIPT
-CREATE SCHEMA $ninjaDatabase DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE $ninjaDatabase;
 CREATE USER '$ninjaUser'@'localhost' IDENTIFIED BY '$ninjaPassword';
-GRANT ALL PRIVILEGES ON `$ninjaDatabase`.* TO '$ninjaUser'@'localhost';
+GRANT ALL PRIVILEGES ON $DB.* TO '$ninjaUser'@'localhost';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
