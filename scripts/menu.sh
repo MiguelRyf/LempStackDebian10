@@ -49,10 +49,11 @@ echo "  6) INSTRALL FILERUN"
 echo "  7) CHANGE PORT SSH"
 echo "  8) REFRESH SERVER"
 echo "  9) CLEAR CACHE RAM"
-echo "  10) ${red}RESTART SERVER${end}"
-echo "  ${grn}11) EXIT MENU${end}"
+echo "  10) INSTALL INVOICE NINJA (BETA)"
+echo "  11) ${red}RESTART SERVER${end}"
+echo "  ${grn}12) EXIT MENU${end}"
 echo ""
-read -p "Choose your option [1-11]: " choice
+read -p "Choose your option [1-12]: " choice
 
   while [ choice != '' ]
   do
@@ -110,16 +111,21 @@ read -p "Choose your option [1-11]: " choice
           main_menu;
           ;;
 
-   10) wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/main-menu/restartserver.sh -O ~/restartserver.sh && dos2unix ~/restartserver.sh && bash ~/restartserver.sh;
+   10) wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/addons/invoiceninja.sh -O ~/invoiceninja.sh && dos2unix ~/invoiceninja.sh && bash ~/invoiceninja.sh;
             read -p "${grn}Press [Enter] key to continue...${end}" readEnterKey;
           main_menu;
           ;;
 
-     11)  clear;
-            echo "Bye!";
-            echo "You can open the Main Menu by typing ${grn}./menu.sh${end}";
-            exit;
-            ;;
+   11) wget https://raw.githubusercontent.com/MiguelRyf/LempStackDebian10/master/scripts/main-menu/restartserver.sh -O ~/restartserver.sh && dos2unix ~/restartserver.sh && bash ~/restartserver.sh;
+            read -p "${grn}Press [Enter] key to continue...${end}" readEnterKey;
+          main_menu;
+          ;;  
+
+   12) clear;
+       echo "Bye!";
+       echo "You can open the Main Menu by typing ${grn}./menu.sh${end}";
+       exit;
+       ;;
 
         *)
             echo "Error: Invalid option..."
